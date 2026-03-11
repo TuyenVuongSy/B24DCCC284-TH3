@@ -17,11 +17,13 @@ const QuanLyDichVu = () => {
       title: 'Tên dịch vụ',
       dataIndex: 'tenDichVu',
       key: 'tenDichVu',
+      width: 200,
     },
     {
       title: 'Giá tiền (VNĐ)',
       dataIndex: 'giaTien',
       key: 'giaTien',
+      width: 150,
       align: 'right',
       render: (val) => new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(val),
     },
@@ -29,12 +31,14 @@ const QuanLyDichVu = () => {
       title: 'Thời gian thực hiện (Phút)',
       dataIndex: 'thoiGianThucHien',
       key: 'thoiGianThucHien',
+      width: 150,
       align: 'center',
     },
     {
       title: 'Mô tả',
       dataIndex: 'moTa',
       key: 'moTa',
+      width: 300,
     },
     {
       title: 'Thao tác',
@@ -66,12 +70,12 @@ const QuanLyDichVu = () => {
   ];
 
   return (
-    <Card 
-      title="Danh sách Dịch vụ" 
+    <Card
+      title="Danh sách Dịch vụ"
       extra={
-        <Button 
-          type="primary" 
-          icon={<PlusOutlined />} 
+        <Button
+          type="primary"
+          icon={<PlusOutlined />}
           onClick={() => {
             setRecord(undefined);
             setIsEdit(false);
@@ -82,10 +86,10 @@ const QuanLyDichVu = () => {
         </Button>
       }
     >
-      <Table 
-        dataSource={danhSach} 
-        columns={columns} 
-        rowKey="_id" 
+      <Table
+        dataSource={danhSach}
+        columns={columns}
+        rowKey="_id"
         loading={loading}
         bordered
       />

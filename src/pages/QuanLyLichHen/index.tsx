@@ -25,6 +25,7 @@ const QuanLyLichHen = () => {
       title: 'Khách hàng',
       dataIndex: 'tenKhachHang',
       key: 'tenKhachHang',
+      width: 200,
       render: (val, record) => (
         <div>
           <b>{val}</b>
@@ -36,17 +37,20 @@ const QuanLyLichHen = () => {
       title: 'Dịch vụ',
       dataIndex: 'idDichVu',
       key: 'idDichVu',
+      width: 150,
       render: (val) => getTenDichVu(val),
     },
     {
       title: 'Nhân viên phục vụ',
       dataIndex: 'idNhanVien',
       key: 'idNhanVien',
+      width: 150,
       render: (val) => getTenNhanVien(val),
     },
     {
       title: 'Thời gian',
       key: 'thoiGian',
+      width: 150,
       render: (val, record) => (
         <div>
           <div>{moment(record.ngayHen).format('DD/MM/YYYY')}</div>
@@ -59,6 +63,7 @@ const QuanLyLichHen = () => {
       dataIndex: 'trangThai',
       key: 'trangThai',
       align: 'center',
+      width: 150,
       render: (val, record) => {
         let color = 'default';
         if (val === 'Chờ duyệt') color = 'warning';
@@ -67,10 +72,10 @@ const QuanLyLichHen = () => {
         if (val === 'Hủy') color = 'error';
 
         return (
-          <Select 
-            value={val} 
+          <Select
+            value={val}
             size="small"
-            style={{ width: 120 }} 
+            style={{ width: 120 }}
             onChange={(newStt) => update(record._id!, { trangThai: newStt as any })}
             options={[
               { label: 'Chờ duyệt', value: 'Chờ duyệt' },
@@ -102,12 +107,12 @@ const QuanLyLichHen = () => {
   ];
 
   return (
-    <Card 
-      title="Danh sách Lịch hẹn" 
+    <Card
+      title="Danh sách Lịch hẹn"
       extra={
-        <Button 
-          type="primary" 
-          icon={<PlusOutlined />} 
+        <Button
+          type="primary"
+          icon={<PlusOutlined />}
           onClick={() => {
             setRecord(undefined);
             setIsEdit(false);
@@ -118,10 +123,10 @@ const QuanLyLichHen = () => {
         </Button>
       }
     >
-      <Table 
-        dataSource={danhSach} 
-        columns={columns} 
-        rowKey="_id" 
+      <Table
+        dataSource={danhSach}
+        columns={columns}
+        rowKey="_id"
         loading={loading}
         bordered
       />

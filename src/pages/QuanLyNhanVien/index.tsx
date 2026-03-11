@@ -17,21 +17,25 @@ const QuanLyNhanVien = () => {
       title: 'Tên nhân viên',
       dataIndex: 'tenNhanVien',
       key: 'tenNhanVien',
+      width: 200,
     },
     {
       title: 'Chuyên môn',
       dataIndex: 'chuyenMon',
       key: 'chuyenMon',
+      width: 200,
     },
     {
       title: 'Giới hạn khách (ngày)',
       dataIndex: 'gioiHanKhachMoiNgay',
       key: 'gioiHanKhachMoiNgay',
       align: 'center',
+      width: 150,
     },
     {
       title: 'Giờ làm việc',
       key: 'gioLamViec',
+      width: 200,
       render: (val, record) => (
         <Tag color="blue">{record.lichLamViec?.gioBatDau} - {record.lichLamViec?.gioKetThuc}</Tag>
       ),
@@ -41,6 +45,7 @@ const QuanLyNhanVien = () => {
       dataIndex: 'trangThai',
       key: 'trangThai',
       align: 'center',
+      width: 120,
       render: (val) => (
         <Tag color={val === 'Hoạt động' ? 'green' : 'red'}>{val || 'Hoạt động'}</Tag>
       ),
@@ -75,12 +80,12 @@ const QuanLyNhanVien = () => {
   ];
 
   return (
-    <Card 
-      title="Danh sách Nhân viên" 
+    <Card
+      title="Danh sách Nhân viên"
       extra={
-        <Button 
-          type="primary" 
-          icon={<PlusOutlined />} 
+        <Button
+          type="primary"
+          icon={<PlusOutlined />}
           onClick={() => {
             setRecord(undefined);
             setIsEdit(false);
@@ -91,10 +96,10 @@ const QuanLyNhanVien = () => {
         </Button>
       }
     >
-      <Table 
-        dataSource={danhSach} 
-        columns={columns} 
-        rowKey="_id" 
+      <Table
+        dataSource={danhSach}
+        columns={columns}
+        rowKey="_id"
         loading={loading}
         bordered
       />
