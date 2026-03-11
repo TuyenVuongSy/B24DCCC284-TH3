@@ -1,4 +1,4 @@
-﻿export default [
+export default [
 	{
 		path: '/user',
 		layout: false,
@@ -38,19 +38,40 @@
 	},
 
 	// DANH MUC HE THONG
-	// {
-	// 	name: 'DanhMuc',
-	// 	path: '/danh-muc',
-	// 	icon: 'copy',
-	// 	routes: [
-	// 		{
-	// 			name: 'ChucVu',
-	// 			path: 'chuc-vu',
-	// 			component: './DanhMuc/ChucVu',
-	// 		},
-	// 	],
-	// },
+	{
+		name: 'Quản lý Đặt Lịch',
+		path: '/quan-ly-dat-lich',
+		icon: 'CalendarOutlined',
+		routes: [
+			{
+				name: 'Dịch Vụ',
+				path: 'dich-vu',
+				component: './QuanLyDichVu',
+			},
+			{
+				name: 'Nhân Viên',
+				path: 'nhan-vien',
+				component: './QuanLyNhanVien',
+			},
+			{
+				name: 'Lịch Hẹn',
+				path: 'lich-hen',
+				component: './QuanLyLichHen',
+			},
+			{
+				name: 'Đánh Giá',
+				path: 'danh-gia',
+				component: './QuanLyDanhGia',
+			},
+			{
+				name: 'Thống Kê',
+				path: 'thong-ke',
+				component: './ThongKeBaoCao',
+			},
+		],
+	},
 
+	///////////////////////////////////
 	{
 		path: '/notification',
 		routes: [
